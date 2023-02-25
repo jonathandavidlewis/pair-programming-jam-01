@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://src/PlayerController.gd" type="Script" id=1]
 [ext_resource path="res://assets/char/player_run.png" type="Texture" id=2]
@@ -11,9 +11,6 @@
 [sub_resource type="CapsuleShape2D" id=9]
 radius = 5.0
 height = 16.0
-
-[sub_resource type="CircleShape2D" id=8]
-radius = 3.0
 
 [sub_resource type="ShaderMaterial" id=3]
 resource_local_to_scene = true
@@ -157,11 +154,6 @@ position = Vector2( 7, -3 )
 
 [node name="ProjectileTarget" type="Position2D" parent="."]
 position = Vector2( 20, -3 )
-
-[node name="Area" type="Area2D" parent="ProjectileTarget"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ProjectileTarget/Area"]
-shape = SubResource( 8 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 material = SubResource( 3 )

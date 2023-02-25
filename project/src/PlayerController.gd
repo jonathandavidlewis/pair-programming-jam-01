@@ -86,11 +86,12 @@ func rotate_180(radians: float):
 
 func attack():
 	var bullet = projectile.instance()
-	var facing_angle = projectile_start.get_angle_to(projectile_target.global_position)
-	if is_facing_left():
-		facing_angle = rotate_180(facing_angle)
-	
-	bullet.update(projectile_speed, facing_angle)
+	var bullet_velocity = (projectile_start.get_global_mouse_position() - projectile_start.global_position).normalized() * projectile_speed
+	# var facing_angle = projectile_start.get_angle_to(projectile_target.global_position)
+	# if is_facing_left():
+	#	facing_angle = rotate_180(facing_angle)
+	bullet.velocity = bullet_velocity
+	# bullet.update(projectile_speed, facing_angle)
 	bullet.global_position = projectile_start.global_position
 	get_tree().root.add_child(bullet)
 	Signals.emit_signal("projectile_shot")

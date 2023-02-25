@@ -12,6 +12,7 @@
 [node name="GameStats" parent="." instance=ExtResource( 4 )]
 
 [node name="PlayerController" parent="." instance=ExtResource( 1 )]
+position = Vector2( 370, 167 )
 z_index = 1
 
 [node name="GlobalAudioStreamPlayer" parent="." instance=ExtResource( 3 )]
